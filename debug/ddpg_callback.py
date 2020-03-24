@@ -114,3 +114,4 @@ class DDPGCallback(Callback):
                          q]
             i += 1
         df.to_csv(os.path.join(self.log_dir, 'ddpg_data.csv'))
+        df.to_pickle(os.path.join(self.log_dir, 'ddpg_data.pkl'))
