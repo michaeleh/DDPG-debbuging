@@ -3,6 +3,7 @@ This project attempt to realize how the critic behave given an observation.
 I used the pendulum environment because of the continuous single dimension action space.
 The code can be easy adjusted for discrete and multi-dimensional environments.
 
+for environment <a href="https://github.com/openai/gym/wiki/Pendulum-v0">information</a>
 
 The project contains two folders:
 * <b>train</b>: train and test code for pendulum environment from gym, using ddpg and keras-rl. nothing special here.<br/>
