@@ -14,7 +14,7 @@ The callback takes a continuous space (observation or actions) or divide it into
 can be found under debug/out  folder, or by running the debug/critic.py script.
 I tested for theta between -2pi and 2pi in steps of pi/2, and theta-dot = 0 for all.
 
-<img src=INSERTLINKHERE></img>
+<img src="https://raw.githubusercontent.com/michaeleh/DDPG-debbuging/master/debug/out/theta_0.0_plot.png"></img>
 
 The callback's df is in train/logs and recorded the learning process for 100,000 steps.
 We can observe things like exploration, exploitation and Q value evaluation.
