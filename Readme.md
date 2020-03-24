@@ -26,8 +26,7 @@ for example (from ddpg_debug_csv_example.ipynb):
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
-from ast import literal_eval
-df = pd.read_csv('train/logs/ddpg_data.csv',index_col=0)
+df = pd.read_pickle('train/logs/ddpg_data.pkl')
 df.head()
 ```
 
@@ -61,36 +60,36 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>[-1. -1. -8.]</td>
-      <td>[-2.]</td>
+      <td>[-1.0, -1.0, -8.0]</td>
+      <td>[-2.0]</td>
       <td>0</td>
       <td>[]</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>[-1. -1. -8.]</td>
-      <td>[-1.]</td>
+      <td>[-1.0, -1.0, -8.0]</td>
+      <td>[-1.0]</td>
       <td>0</td>
       <td>[]</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>[-1. -1. -8.]</td>
-      <td>[0.]</td>
+      <td>[-1.0, -1.0, -8.0]</td>
+      <td>[0.0]</td>
       <td>0</td>
       <td>[]</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>[-1. -1. -8.]</td>
-      <td>[1.]</td>
+      <td>[-1.0, -1.0, -8.0]</td>
+      <td>[1.0]</td>
       <td>0</td>
       <td>[]</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>[-1. -1. -8.]</td>
-      <td>[2.]</td>
+      <td>[-1.0, -1.0, -8.0]</td>
+      <td>[2.0]</td>
       <td>0</td>
       <td>[]</td>
     </tr>
@@ -164,10 +163,10 @@ most_c
   <tbody>
     <tr>
       <th>569</th>
-      <td>[1. 0. 4.]</td>
-      <td>[2.]</td>
-      <td>11048</td>
-      <td>[-39.084824, -39.03244, -38.879787, -43.919815...</td>
+      <td>[1.0, 0.0, 4.0]</td>
+      <td>[2.0]</td>
+      <td>18801</td>
+      <td>[-34.07399, -33.94677, -33.910908, -34.01233, ...</td>
     </tr>
   </tbody>
 </table>
@@ -177,8 +176,8 @@ most_c
 
 
 ```python
-y = literal_eval(most_c.Q.iloc[0])
-x = range(len(x))
+y = most_c.Q.iloc[0]
+x = range(len(y))
 plt.xlabel('time')
 plt.ylabel('Q val')
 plt.title('Q val for state (1,0,4) and action (2) over time')
@@ -188,13 +187,10 @@ plt.plot(x,y)
 
 
 
-    [<matplotlib.lines.Line2D at 0x1bb94bca4e0>]
+    [<matplotlib.lines.Line2D at 0x27158085860>]
 
 
 
 
 ![png](output_7_1.png)
 
-
-
- 
